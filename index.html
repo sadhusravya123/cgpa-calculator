@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CGPA Calculator</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -26,6 +25,13 @@
             id="credits"
             placeholder="Credits">
 
+        <input
+            type="number"
+            id="semester"
+            placeholder="Semester (1-8)"
+            min="1"
+            max="8">
+
         <select id="grade">
             <option value="10">O (10)</option>
             <option value="9">A+ (9)</option>
@@ -45,17 +51,15 @@
     <table>
 
         <thead>
-
-        <tr>
-            <th>Subject</th>
-            <th>Credits</th>
-            <th>Grade</th>
-        </tr>
-
+            <tr>
+                <th>Subject</th>
+                <th>Credits</th>
+                <th>Semester</th>
+                <th>Grade</th>
+            </tr>
         </thead>
 
         <tbody id="tableBody">
-
         </tbody>
 
     </table>
@@ -64,9 +68,41 @@
         Calculate CGPA
     </button>
 
-    <h2 id="result">
-        CGPA : 0.00
+    <h2 id="semesterResult">
+        Semester GPA : 0.00
     </h2>
+
+    <h2 id="result">
+        Overall CGPA : 0.00
+    </h2>
+
+    <hr>
+
+    <h2>🔮 What-If Mode</h2>
+
+    <p>Select a subject and choose a new grade to predict your CGPA.</p>
+
+    <select id="whatIfSubject">
+        <option value="">Select Subject</option>
+    </select>
+
+    <select id="newGrade">
+        <option value="10">O (10)</option>
+        <option value="9">A+ (9)</option>
+        <option value="8">A (8)</option>
+        <option value="7">B+ (7)</option>
+        <option value="6">B (6)</option>
+        <option value="5">C (5)</option>
+        <option value="0">F (0)</option>
+    </select>
+
+    <button onclick="predictCGPA()">
+        Predict CGPA
+    </button>
+
+    <h3 id="prediction">
+        Predicted CGPA : 0.00
+    </h3>
 
 </div>
 
@@ -74,4 +110,3 @@
 
 </body>
 </html>
-<!-- Update -->
